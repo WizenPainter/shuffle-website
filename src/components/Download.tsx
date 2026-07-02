@@ -1,5 +1,6 @@
 import { site, shortcuts } from "@/lib/site";
-import { AppleIcon, DownloadIcon, GitHubIcon } from "./icons";
+import DownloadButton from "./DownloadButton";
+import { GitHubIcon } from "./icons";
 
 export default function Download() {
   return (
@@ -21,15 +22,7 @@ export default function Download() {
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href={site.dmgUrl}
-                  download={site.dmgName}
-                  className="group inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-base font-semibold text-ink transition-transform hover:scale-[1.03] active:scale-95"
-                >
-                  <AppleIcon className="h-5 w-5" />
-                  Download .dmg
-                  <DownloadIcon className="h-4 w-4 opacity-60 transition-transform group-hover:translate-y-0.5" />
-                </a>
+                <DownloadButton label="Download .dmg" />
                 <a
                   href={site.githubUrl}
                   target="_blank"

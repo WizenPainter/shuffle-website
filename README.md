@@ -39,17 +39,46 @@ Then update the matching entry in `clips` (`src/lib/site.ts`) if the filename
 changed. A frame with no `src` falls back to a labelled "Video coming soon"
 placeholder.
 
-## The download (.dmg)
+## The download (.dmg) — always the latest GitHub release
 
-The Download buttons point at `public/Shuffle.dmg` (see `dmgUrl` in
-`src/lib/site.ts`). To ship a new build, replace that file:
+The site does **not** bundle the DMG. The Download buttons resolve to the newest
+published GitHub release via `dmgUrl` in `src/lib/site.ts`:
 
-```sh
-cp /path/to/Shuffle.dmg public/Shuffle.dmg
+```
+https://github.com/WizenPainter/shuffle/releases/latest/download/Shuffle.dmg
 ```
 
-For large binaries you may prefer hosting the `.dmg` on a GitHub Release or a
-CDN and pointing `dmgUrl` at that URL instead of bundling it.
+GitHub redirects `/releases/latest/download/<name>` to the current release's
+asset, so visitors always get the latest version with no site redeploy.
+
+`src/components/DownloadButton.tsx` also calls the GitHub API on load to show
+the version (e.g. "v0.1.0") and to resolve the exact asset URL even if it's
+named per-version — falling back to the stable link above if the API is
+unavailable. So it works whether JavaScript runs or not.
+
+### Requirement: name the release asset `Shuffle.dmg`
+
+The stable link only works if each release has an asset named **exactly**
+`Shuffle.dmg`. Your build script produces `Shuffle-<version>.dmg`, so upload a
+stable-named copy too. To cut a release:
+
+```sh
+cd /path/to/finder2
+./make_dmg.sh                              # builds + signs + notarizes Shuffle-<version>.dmg
+cp "Shuffle-$(grep -m1 '^version' Cargo.toml | sed -E 's/.*"([^"]+)".*/\1/').dmg" Shuffle.dmg
+
+gh release create "v0.1.0" Shuffle.dmg "Shuffle-0.1.0.dmg" \
+  --title "Shuffle 0.1.0" --notes "…"
+# On later releases: gh release create "vX.Y.Z" Shuffle.dmg "Shuffle-X.Y.Z.dmg" ...
+```
+
+Uploading both means the download page's API lookup can prefer the versioned
+asset while the no-JS fallback still finds `Shuffle.dmg`. If you'd rather not
+keep the stable name, drop the versioned DMG only — the API lookup will still
+find it, but the no-JS fallback link would 404, so keeping `Shuffle.dmg` is
+recommended.
+
+To change the repo, edit `githubRepo` / the release URLs in `src/lib/site.ts`.
 
 ## Editing content
 

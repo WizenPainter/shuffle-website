@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { site, clips } from "@/lib/site";
 import VideoFrame from "./VideoFrame";
-import { AppleIcon, DownloadIcon, GitHubIcon, SparkIcon } from "./icons";
+import DownloadButton from "./DownloadButton";
+import { GitHubIcon, SparkIcon } from "./icons";
 
 export default function Hero() {
   return (
@@ -38,15 +39,7 @@ export default function Hero() {
             className="animate-rise mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
             style={{ animationDelay: "0.2s" }}
           >
-            <a
-              href={site.dmgUrl}
-              download={site.dmgName}
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-base font-semibold text-ink transition-transform hover:scale-[1.03] active:scale-95 sm:w-auto"
-            >
-              <AppleIcon className="h-5 w-5" />
-              Download for macOS
-              <DownloadIcon className="h-4 w-4 opacity-60 transition-transform group-hover:translate-y-0.5" />
-            </a>
+            <DownloadButton label="Download for macOS" className="w-full sm:w-auto" />
             <a
               href={site.githubUrl}
               target="_blank"

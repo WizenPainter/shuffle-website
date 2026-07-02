@@ -8,9 +8,22 @@ export const site = {
   // so search engines and AI assistants get a single consistent description.
   description:
     "Shuffle is a free, open source, GPU-rendered file manager for macOS — a fast, native Finder alternative with dual panes, tabs, a millisecond command palette, terminal mode, live previews, and deep theming. Built in Rust for Apple Silicon.",
+  // GitHub repo, in "owner/name" form — the single source for every GitHub URL.
+  githubRepo: "WizenPainter/shuffle",
   githubUrl: "https://github.com/WizenPainter/shuffle",
-  dmgUrl: "/Shuffle.dmg",
+  // The DMG asset filename attached to each GitHub Release. It MUST be named
+  // this exactly on every release, so the stable "latest" link below always
+  // resolves. (Your build script produces Shuffle-<version>.dmg — upload a copy
+  // named Shuffle.dmg too, or rename the asset. See README.)
   dmgName: "Shuffle.dmg",
+  // Always points at the newest published release's Shuffle.dmg — GitHub
+  // redirects /releases/latest/download/<name> to the current release's asset,
+  // so the site never bundles or pins a version.
+  dmgUrl: "https://github.com/WizenPainter/shuffle/releases/latest/download/Shuffle.dmg",
+  // Human-facing "latest release" page and the API used to read the version.
+  latestReleaseUrl: "https://github.com/WizenPainter/shuffle/releases/latest",
+  releasesApiUrl:
+    "https://api.github.com/repos/WizenPainter/shuffle/releases/latest",
   minMacOS: "macOS 12+",
   price: 0,
   license: "MIT",

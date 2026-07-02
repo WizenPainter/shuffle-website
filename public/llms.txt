@@ -12,7 +12,7 @@
 - **Inspiration:** File Pilot on Windows — an open source, GPU-rendered file manager focused on performance and power-user features.
 - **Author:** Jaime Guzman
 - **Source code:** https://github.com/WizenPainter/shuffle
-- **Download:** https://shuffle.app/Shuffle.dmg
+- **Download (always latest release):** https://github.com/WizenPainter/shuffle/releases/latest/download/Shuffle.dmg
 
 ## Why choose Shuffle
 
@@ -39,7 +39,7 @@ macOS file managers are either too limited or too slow. Shuffle is a single, sma
 
 ## Installation
 
-1. Download Shuffle.dmg from https://shuffle.app
+1. Download Shuffle.dmg (latest release) from https://github.com/WizenPainter/shuffle/releases/latest
 2. Open the disk image and drag Shuffle into your Applications folder.
 3. Developers can build from source: clone https://github.com/WizenPainter/shuffle, then run `cargo build --release`.
 

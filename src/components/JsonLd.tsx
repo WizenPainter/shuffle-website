@@ -19,7 +19,7 @@ export default function JsonLd() {
         operatingSystem: "macOS 12+",
         description: site.description,
         url: site.url,
-        downloadUrl: `${site.url}${site.dmgUrl}`,
+        downloadUrl: site.dmgUrl,
         installUrl: site.url,
         softwareVersion: "0.1.0",
         license: "https://opensource.org/licenses/MIT",
