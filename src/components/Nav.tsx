@@ -6,11 +6,12 @@ import { site } from "@/lib/site";
 import { DownloadIcon, GitHubIcon } from "./icons";
 
 const links = [
-  { href: "#features", label: "Features" },
-  { href: "#showcase", label: "In action" },
-  { href: "#download", label: "Download" },
-  { href: "#open-source", label: "Open source" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/#features", label: "Features" },
+  { href: "/#showcase", label: "In action" },
+  { href: "/#download", label: "Download" },
+  { href: "/#open-source", label: "Open source" },
+  { href: "/#faq", label: "FAQ" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export default function Nav() {
@@ -32,7 +33,7 @@ export default function Nav() {
             : "border border-transparent bg-transparent"
         }`}
       >
-        <a href="#top" className="flex items-center gap-2.5">
+        <a href="/" className="flex items-center gap-2.5">
           <Image
             src="/logo.png"
             alt="Shuffle"
@@ -67,7 +68,7 @@ export default function Nav() {
             <GitHubIcon className="h-5 w-5" />
           </a>
           <a
-            href="#download"
+            href="/#download"
             className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3.5 py-2 text-sm font-semibold text-ink transition-transform hover:scale-[1.03] active:scale-95"
           >
             <DownloadIcon className="h-4 w-4" />

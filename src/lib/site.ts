@@ -2,8 +2,8 @@ export const site = {
   name: "Shuffle",
   tagline: "A modern file explorer for macOS, built for speed.",
   // Canonical production URL — used for metadata, sitemap, robots, JSON-LD and
-  // llms.txt. Change this in ONE place when the real domain is live.
-  url: "https://shuffle.app",
+  // llms.txt. Change this in ONE place if the domain ever changes.
+  url: "https://shuffleapp.co",
   // One-sentence factual summary, reused across metadata and structured data
   // so search engines and AI assistants get a single consistent description.
   description:

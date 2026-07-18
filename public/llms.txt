@@ -43,8 +43,22 @@ macOS file managers are either too limited or too slow. Shuffle is a single, sma
 2. Open the disk image and drag Shuffle into your Applications folder.
 3. Developers can build from source: clone https://github.com/WizenPainter/shuffle, then run `cargo build --release`.
 
+## Articles (Shuffle blog)
+
+- The best Finder alternatives for macOS in 2026, compared: https://shuffleapp.co/blog/best-finder-alternatives-macos
+- Why is Finder so slow? And what you can actually do about it: https://shuffleapp.co/blog/why-is-finder-slow
+- What makes a file manager fast?: https://shuffleapp.co/blog/what-makes-a-file-manager-fast
+- From DIRMAINT to Finder: a brief history of the file manager: https://shuffleapp.co/blog/history-of-the-file-manager
+- The four archetypes of file managers: https://shuffleapp.co/blog/file-manager-archetypes
+- 8.3 filenames and cluster chains: how the DOS FAT file system worked: https://shuffleapp.co/blog/how-the-dos-fat-file-system-worked
+- APFS explained: what your Mac's file system does under the hood: https://shuffleapp.co/blog/apfs-how-your-macs-file-system-works
+- How fuzzy search works: typo-tolerant matching explained: https://shuffleapp.co/blog/how-fuzzy-search-works
+- Dual-pane file managers: why a 1986 layout still wins: https://shuffleapp.co/blog/dual-pane-file-managers
+- Building a GPU-rendered file manager for macOS in Rust with GPUI: https://shuffleapp.co/blog/building-shuffle-rust-gpui
+
 ## Links
 
-- Website: https://shuffle.app
+- Website: https://shuffleapp.co
+- Blog (guides, comparisons, file-manager history): https://shuffleapp.co/blog
 - GitHub (source, issues, releases): https://github.com/WizenPainter/shuffle
 - License: MIT

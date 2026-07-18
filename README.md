@@ -80,6 +80,24 @@ recommended.
 
 To change the repo, edit `githubRepo` / the release URLs in `src/lib/site.ts`.
 
+## Blog
+
+The blog lives at `/blog`, fully static:
+
+- **Post metadata** (slug, title, description, date, tags, reading time) is the
+  array in `src/lib/blog.ts` — newest first. It drives the index page, per-post
+  metadata/JSON-LD, and the sitemap.
+- **Post bodies** are React components in `src/content/blog/<slug>.tsx`,
+  registered in `src/content/blog/index.ts`. They render semantic HTML styled
+  by the `.article` rules in `globals.css` (plus `.callout`, `.table-scroll`,
+  and `.demo` helpers).
+- **Interactive widgets** are `"use client"` components in
+  `src/content/blog/interactive/`, imported by their post.
+
+To add a post: create the content component, register it in
+`src/content/blog/index.ts`, and add its metadata entry to `src/lib/blog.ts`.
+Keep `public/llms.txt`'s article list in sync.
+
 ## Editing content
 
 All copy, features, shortcuts, FAQs, and links live in `src/lib/site.ts` —
@@ -89,10 +107,9 @@ purchase is marked "Planned").
 
 ## SEO & AI discoverability (AISEO)
 
-> **⚠️ Set the domain.** Everything below uses `site.url` in `src/lib/site.ts`
-> (currently `https://shuffle.app`). Change that one value to the real
-> production domain before launch — canonical URLs, the sitemap, robots, JSON-LD
-> and `llms.txt` all derive from it.
+> The production domain is `https://shuffleapp.co`, set once as `site.url` in
+> `src/lib/site.ts` — canonical URLs, the sitemap, robots, JSON-LD and
+> `llms.txt` all derive from it.
 
 Search engines:
 

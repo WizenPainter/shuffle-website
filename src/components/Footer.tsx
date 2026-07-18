@@ -18,11 +18,14 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center gap-6 text-sm text-white/55">
-          <a href="#features" className="transition-colors hover:text-white">
+          <a href="/#features" className="transition-colors hover:text-white">
             Features
           </a>
-          <a href="#download" className="transition-colors hover:text-white">
+          <a href="/#download" className="transition-colors hover:text-white">
             Download
+          </a>
+          <a href="/blog" className="transition-colors hover:text-white">
+            Blog
           </a>
           <a
             href={site.githubUrl}

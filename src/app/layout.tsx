@@ -52,14 +52,14 @@ export const metadata: Metadata = {
     siteName: "Shuffle",
     type: "website",
     locale: "en_US",
-    images: [{ url: "/logo.png", width: 1200, height: 630, alt: "Shuffle — a fast, native file manager for macOS" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Shuffle — a fast, native file manager for macOS" }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description:
       "A free, open source, GPU-rendered Finder alternative for macOS. Native speed, dual panes, a command palette, and deep theming.",
-    images: ["/logo.png"],
+    images: ["/og.png"],
   },
   robots: {
     index: true,
