@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 
 /**
- * A miniature FAT12 volume: 48 clusters (numbered 2–49, as on a real FAT,
+ * A miniature FAT12 volume: 48 clusters (numbered 2-49, as on a real FAT,
  * where entries 0 and 1 are reserved). All data is hardcoded and
  * deterministic. Click a file to walk its cluster chain; delete/recover
  * to see what the FAT actually does on deletion.
@@ -58,7 +58,7 @@ export default function FatDiskMap() {
   const selectedFile = FILES.find((f) => f.name === selected) ?? null;
   const selectedDeleted = selectedFile ? deleted.has(selectedFile.name) : false;
 
-  // Restart the walk whenever the selection (or its deleted state) changes —
+  // Restart the walk whenever the selection (or its deleted state) changes - 
   // state adjustment during render, per React docs, instead of in an effect.
   const animKey = `${selected}:${selectedDeleted}`;
   const [prevAnimKey, setPrevAnimKey] = useState(animKey);
@@ -125,7 +125,7 @@ export default function FatDiskMap() {
   return (
     <div className="demo not-prose">
       <p className="mb-3 text-xs font-medium uppercase tracking-wider text-white/40">
-        A 48-cluster FAT volume — click a file to walk its chain
+        A 48-cluster FAT volume - click a file to walk its chain
       </p>
 
       {/* Directory table */}
@@ -216,10 +216,10 @@ export default function FatDiskMap() {
                 {selectedFile.chain[0]} · size {selectedFile.size}
               </span>
               <br />
-              <span className="text-white/50">FAT: {fatReadout} — chain zeroed, data untouched.</span>
+              <span className="text-white/50">FAT: {fatReadout} - chain zeroed, data untouched.</span>
               <br />
               <span className="text-cyan-glow/80">
-                undelete: assume contiguous from {selectedFile.chain[0]}, size ⇒ clusters{" "}
+                undelete: assume contiguous from {selectedFile.chain[0]}, size implies clusters{" "}
                 {selectedFile.chain.join(", ")}
               </span>
             </>
@@ -233,8 +233,8 @@ export default function FatDiskMap() {
               <span className="text-brand-200">FAT walk: {fatReadout}</span>
               <br />
               <span className="text-white/50">
-                chain: {selectedFile.chain.slice(0, step + 1).join(" → ")}
-                {step === selectedFile.chain.length - 1 ? " → EOF" : " …"}
+                chain: {selectedFile.chain.slice(0, step + 1).join(" -> ")}
+                {step === selectedFile.chain.length - 1 ? " -> EOF" : " ..."}
               </span>
             </>
           )

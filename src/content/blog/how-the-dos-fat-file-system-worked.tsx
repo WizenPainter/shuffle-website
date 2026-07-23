@@ -13,7 +13,7 @@ export default function HowTheDosFatFileSystemWorked() {
         Understanding FAT is also the fastest way to understand file systems in
         general, because it is the simplest design that actually works: a boot
         sector, one table, one directory format, and nothing else. This post
-        walks the on-disk structures of FAT12 — the original — and then follows
+        walks the on-disk structures of FAT12 - the original - and then follows
         the family through FAT16, FAT32, long filenames, and exFAT.
       </p>
 
@@ -23,7 +23,7 @@ export default function HowTheDosFatFileSystemWorked() {
         first salaried employee, worked out the scheme with Bill Gates in 1977
         and implemented it for Microsoft&apos;s Standalone Disk BASIC-80, which
         needed some way to keep named files on 8-inch floppies. In 1980 Tim
-        Paterson adopted and reworked the idea — with 12-bit table entries —
+        Paterson adopted and reworked the idea - with 12-bit table entries - 
         for 86-DOS at Seattle Computer Products, and when Microsoft bought
         86-DOS and shipped it as PC&nbsp;DOS 1.0 in 1981, FAT12 became the file
         system of the IBM PC.
@@ -36,7 +36,7 @@ export default function HowTheDosFatFileSystemWorked() {
         single table on all of its bookkeeping, keeps a second copy of that
         table as its only concession to redundancy, and describes each file
         with one fixed 32-byte record. There are no permissions, no owners,
-        and no journal — concepts that would have been meaningless on a
+        and no journal - concepts that would have been meaningless on a
         single-user machine with a beeper for a security system.
       </p>
 
@@ -49,7 +49,7 @@ export default function HowTheDosFatFileSystemWorked() {
       <ol>
         <li>
           <strong>Boot sector</strong> (sector 0). The first bytes are a jump
-          instruction and then the <em>BIOS Parameter Block</em> — a little
+          instruction and then the <em>BIOS Parameter Block</em> - a little
           table declaring the volume&apos;s geometry: bytes per sector,
           sectors per cluster, number of FATs, root-directory entry count,
           total sectors. Everything else on the disk is found by arithmetic
@@ -57,17 +57,17 @@ export default function HowTheDosFatFileSystemWorked() {
           <code>0x55 0xAA</code> signature.
         </li>
         <li>
-          <strong>FAT #1</strong> (9 sectors on our floppy) — the allocation
+          <strong>FAT #1</strong> (9 sectors on our floppy) - the allocation
           table itself, described below.
         </li>
         <li>
-          <strong>FAT #2</strong> — a byte-for-byte copy of FAT #1, written on
+          <strong>FAT #2</strong> - a byte-for-byte copy of FAT #1, written on
           every update. If a sector of the first table went bad, the data was
           not lost with it. This is the entire crash-resilience story of FAT:
           two copies of one structure, and good luck.
         </li>
         <li>
-          <strong>Root directory</strong> — a fixed-size array of 32-byte
+          <strong>Root directory</strong> - a fixed-size array of 32-byte
           entries; 224 of them (14 sectors) on a 1.44&nbsp;MB floppy. Fixed
           means fixed: a full root directory refused new files even with free
           space remaining. Subdirectories, added in DOS 2.0, are ordinary
@@ -75,7 +75,7 @@ export default function HowTheDosFatFileSystemWorked() {
           limit.
         </li>
         <li>
-          <strong>Data area</strong> — everything remaining, divided into{" "}
+          <strong>Data area</strong> - everything remaining, divided into{" "}
           <em>clusters</em> of one or more sectors. Clusters are numbered
           starting at 2 (entries 0 and 1 of the table are reserved), which is
           why the first file on a fresh floppy starts at cluster 2, not 0.
@@ -106,7 +106,7 @@ export default function HowTheDosFatFileSystemWorked() {
             <tr>
               <td>0x08</td>
               <td>3</td>
-              <td>Extension — the dot is implied, never stored</td>
+              <td>Extension - the dot is implied, never stored</td>
             </tr>
             <tr>
               <td>0x0B</td>
@@ -117,7 +117,7 @@ export default function HowTheDosFatFileSystemWorked() {
               </td>
             </tr>
             <tr>
-              <td>0x0C–0x13</td>
+              <td>0x0C-0x13</td>
               <td>8</td>
               <td>
                 Reserved in DOS; later used for creation time and last-access
@@ -138,7 +138,7 @@ export default function HowTheDosFatFileSystemWorked() {
               <td>0x1A</td>
               <td>2</td>
               <td>
-                <strong>First cluster</strong> — the head of the file&apos;s
+                <strong>First cluster</strong> - the head of the file&apos;s
                 chain
               </td>
             </tr>
@@ -155,7 +155,7 @@ export default function HowTheDosFatFileSystemWorked() {
         <code>README.TXT</code> come from, and why a generation of software
         shipped with names like <code>WP51.EXE</code>. The packed timestamp is
         a small marvel of stinginess: 16 bits for the date (seven bits of year
-        counted from 1980, four of month, five of day) and 16 for the time —
+        counted from 1980, four of month, five of day) and 16 for the time - 
         five bits of hours, six of minutes, and five for seconds{" "}
         <em>divided by two</em>. FAT timestamps have two-second resolution
         because there was no room for the odd seconds. And the 32-bit size
@@ -168,24 +168,24 @@ export default function HowTheDosFatFileSystemWorked() {
         Notice what the directory entry does <em>not</em> contain: any list of
         where the file&apos;s data lives, beyond the first cluster. That job
         belongs to the FAT, and its trick is worth savoring. The table has one
-        entry per cluster in the data area — entry 7 corresponds to cluster 7
-        — and each entry holds simply <strong>the number of the next cluster
+        entry per cluster in the data area - entry 7 corresponds to cluster 7
+        - and each entry holds simply <strong>the number of the next cluster
         in the file</strong>. The allocation table is a linked list, with the
         pointers stored apart from the data:
       </p>
       <ul>
         <li>
-          <code>0x000</code> — cluster is free;
+          <code>0x000</code> - cluster is free;
         </li>
         <li>
-          any ordinary value — cluster is in use, and here is the next link;
+          any ordinary value - cluster is in use, and here is the next link;
         </li>
         <li>
-          <code>0xFF8</code>–<code>0xFFF</code> — end of chain (the file stops
+          <code>0xFF8</code>-<code>0xFFF</code> - end of chain (the file stops
           here);
         </li>
         <li>
-          <code>0xFF7</code> — bad cluster, discovered by <code>FORMAT</code>{" "}
+          <code>0xFF7</code> - bad cluster, discovered by <code>FORMAT</code>{" "}
           or <code>CHKDSK</code>, never to be allocated.
         </li>
       </ul>
@@ -194,7 +194,7 @@ export default function HowTheDosFatFileSystemWorked() {
         directory entry, read it, look up its FAT entry, go where it points,
         repeat until you hit an end-of-chain marker, and trim the final
         cluster with the size field. Free-space accounting needs no separate
-        bitmap — count the zeros. Allocation is finding a zero and splicing it
+        bitmap - count the zeros. Allocation is finding a zero and splicing it
         in. One structure does everything, and on a floppy the whole table
         (4.5&nbsp;KB per copy) fit comfortably in RAM.
       </p>
@@ -204,8 +204,8 @@ export default function HowTheDosFatFileSystemWorked() {
         The demo&apos;s fragmented <code>GAME.EXE</code> is the design&apos;s
         weakness made visible. Because each link is only found by reading the
         previous one, a badly fragmented file on a real disk meant a seek per
-        hop — and the table gives you no way to ask &ldquo;where are all my
-        file&apos;s clusters?&rdquo; without walking. Modern file systems
+        hop - and the table gives you no way to ask &quot;where are all my
+        file&apos;s clusters?&quot; without walking. Modern file systems
         store <em>extents</em> (start + length runs) precisely to avoid this.
       </p>
 
@@ -213,18 +213,18 @@ export default function HowTheDosFatFileSystemWorked() {
       <p>
         When you ran <code>DEL LETTER.TXT</code>, DOS did two cheap things: it
         overwrote the first byte of the directory entry&apos;s name with the
-        marker <code>0xE5</code> (&ldquo;this slot is reusable&rdquo;), and it
+        marker <code>0xE5</code> (&quot;this slot is reusable&quot;), and it
         walked the FAT chain setting each entry back to zero. That is all. The
-        data clusters were not touched, and the rest of the directory entry —
+        data clusters were not touched, and the rest of the directory entry - 
         including the extension, the size, and crucially the{" "}
-        <strong>first cluster number</strong> — remained in place.
+        <strong>first cluster number</strong> - remained in place.
       </p>
       <p>
         This is why undelete tools were a whole product category, and why
         Norton Utilities made its name. <code>UNERASE</code>, and later
         DOS&nbsp;5&apos;s own <code>UNDELETE</code>, found entries starting
         with <code>0xE5</code>, asked you to supply the lost first letter, and
-        then had to reconstruct the chain — which the zeroed FAT no longer
+        then had to reconstruct the chain - which the zeroed FAT no longer
         recorded. The heuristic: assume the file was contiguous, start at the
         surviving first-cluster number, and claim free clusters forward until
         the size field was satisfied. On a lightly used disk, where files
@@ -240,16 +240,16 @@ export default function HowTheDosFatFileSystemWorked() {
         fresh disk that yields tidy contiguous files; after months of
         creating, growing, and deleting, free clusters are scattered and every
         new file is shredded across the platter. The linked-list design means
-        fragmentation costs you twice — once in head seeks between data
+        fragmentation costs you twice - once in head seeks between data
         clusters, and once because sequential reads become pointer chasing.
         Hence the great shared memory of the era: running{" "}
         <code>DEFRAG</code> (or Norton&apos;s <code>SPEEDISK</code>) and
         watching the little blocks reshuffle for an hour. A defragmenter is
-        conceptually simple on FAT — move clusters so each chain is
-        consecutive, rewrite the table — which is partly why so many existed.
+        conceptually simple on FAT - move clusters so each chain is
+        consecutive, rewrite the table - which is partly why so many existed.
       </p>
 
-      <h2>FAT12 → FAT16 → FAT32: outgrowing the table, twice</h2>
+      <h2>FAT12 to FAT16 to FAT32: outgrowing the table, twice</h2>
       <p>
         Every jump in the family was forced by the same arithmetic: cluster
         addresses are fixed-width, so a volume can have only so many clusters,
@@ -257,21 +257,21 @@ export default function HowTheDosFatFileSystemWorked() {
       </p>
       <ul>
         <li>
-          <strong>FAT12</strong> (1980) — 12-bit entries, at most 4,084
+          <strong>FAT12</strong> (1980) - 12-bit entries, at most 4,084
           clusters. Fine for floppies; hopeless for hard disks beyond a few
           dozen megabytes.
         </li>
         <li>
-          <strong>FAT16</strong> (PC&nbsp;DOS 3.0, 1984) — 16-bit entries,
+          <strong>FAT16</strong> (PC&nbsp;DOS 3.0, 1984) - 16-bit entries,
           up to 65,524 clusters, arriving with the PC/AT&apos;s hard disk.
           Other 16-bit fields still capped volumes at 32&nbsp;MB until
           Compaq&apos;s DOS 3.31 (1987) widened the sector count, taking
-          FAT16 to 2&nbsp;GB — at the cost of 32&nbsp;KB clusters, in which a
+          FAT16 to 2&nbsp;GB - at the cost of 32&nbsp;KB clusters, in which a
           200-byte batch file consumed 32&nbsp;KB of disk. That waste
-          (&ldquo;slack space&rdquo;) was the practical scandal of FAT16.
+          (&quot;slack space&quot;) was the practical scandal of FAT16.
         </li>
         <li>
-          <strong>FAT32</strong> (Windows&nbsp;95 OSR2, 1996) — 32-bit
+          <strong>FAT32</strong> (Windows&nbsp;95 OSR2, 1996) - 32-bit
           entries of which 28 bits are used, lifting volumes to 2&nbsp;TB and
           letting clusters shrink back to sane sizes. The root directory also
           finally became an ordinary cluster chain instead of a fixed array.
@@ -289,8 +289,8 @@ export default function HowTheDosFatFileSystemWorked() {
         entries placed <em>before</em> the real one, each carrying 13 UTF-16
         characters, a sequence number, and a checksum of the short name. The
         genius is the attribute byte: LFN entries are marked{" "}
-        <code>0x0F</code> — read-only + hidden + system + volume-label
-        simultaneously — a combination so nonsensical that DOS and every
+        <code>0x0F</code> - read-only + hidden + system + volume-label
+        simultaneously - a combination so nonsensical that DOS and every
         existing tool silently ignored the entries instead of choking. Old
         systems saw <code>LETTER~1.DOC</code>; new ones reassembled the long
         name. Full backward and forward compatibility, achieved with a bit
@@ -310,20 +310,20 @@ export default function HowTheDosFatFileSystemWorked() {
       <h2>What FAT never had</h2>
       <p>
         FAT&apos;s omissions define modern file systems by contrast. No
-        ownership or permissions — any process could touch any byte. No
+        ownership or permissions - any process could touch any byte. No
         journaling or copy-on-write: interrupt a write at the wrong moment and
         the two FAT copies could disagree, orphaning chains (<code>CHKDSK</code>
         &apos;s famous <code>FILE0001.CHK</code> files were exactly these
         recovered orphans). No checksums, no snapshots, no hard links, no
         atomic anything. Those are the problems that HFS+, NTFS, ext4, and
-        eventually APFS were built to solve — we walk through how your
+        eventually APFS were built to solve - we walk through how your
         Mac&apos;s current file system handles them in{" "}
         <Link href="/blog/apfs-how-your-macs-file-system-works">
           APFS explained
         </Link>
         . And yet: a file manager listing a directory today performs the same
-        conceptual acts as DOS did in 1981 — read entries, resolve names, walk
-        allocation metadata — just against structures a thousand times more
+        conceptual acts as DOS did in 1981 - read entries, resolve names, walk
+        allocation metadata - just against structures a thousand times more
         elaborate, which is a large part of why doing it fast still takes
         engineering care (that story is in{" "}
         <Link href="/blog/what-makes-a-file-manager-fast">
@@ -345,14 +345,15 @@ export default function HowTheDosFatFileSystemWorked() {
 
       <div className="callout">
         <p>
-          <strong>TL;DR</strong> — a FAT volume is boot sector → two copies of
-          the allocation table → root directory → data clusters. Each file is
+          <strong>TL;DR</strong> - a FAT volume is a boot sector, two copies
+          of the allocation table, the root directory, and the data clusters.
+          Each file is
           one 32-byte entry (8.3 name, attributes, timestamp, size) pointing
           at a first cluster; the FAT itself is a linked list, so reading a
           file means hopping entry to entry until an end-of-chain marker.
           Deletion just wrote <code>0xE5</code> on the name and zeroed the
-          chain — data stayed put, which is why undelete worked. FAT12 →
-          FAT16 → FAT32 widened cluster addresses as disks grew; VFAT smuggled
+          chain - data stayed put, which is why undelete worked. FAT12, FAT16
+          and FAT32 widened cluster addresses as disks grew; VFAT smuggled
           long names past old tools with the impossible attribute{" "}
           <code>0x0F</code>; exFAT carries the family on in your SD cards
           today.

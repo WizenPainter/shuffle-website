@@ -36,7 +36,7 @@ export default function VideoFrame({
           <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
           <span className="h-3 w-3 rounded-full bg-[#28c840]" />
           <span className="ml-3 truncate text-xs text-white/40">
-            Shuffle — {label}
+            Shuffle - {label}
           </span>
         </div>
       )}
@@ -50,7 +50,7 @@ export default function VideoFrame({
           playsInline
           preload="metadata"
           poster={poster}
-          aria-label={`Shuffle — ${label}`}
+          aria-label={`Shuffle - ${label}`}
         >
           <source src={src} type="video/mp4" />
         </video>

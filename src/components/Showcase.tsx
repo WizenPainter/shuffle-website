@@ -5,7 +5,7 @@ const clips = [
   {
     label: "Split canvas",
     title: "Drag to split",
-    body: "Send a tab to the edge and the window splits into two independent panes — each with its own tabs, history, and filter.",
+    body: "Send a tab to the edge and the window splits into two independent panes - each with its own tabs, history, and filter.",
     media: media.split,
   },
   {
@@ -17,7 +17,7 @@ const clips = [
   {
     label: "Live theming",
     title: "Make it yours",
-    body: "Switch between dozens of presets or tune individual colors — every change applies live, instantly.",
+    body: "Switch between dozens of presets or tune individual colors - every change applies live, instantly.",
     media: media.customization,
   },
 ];
@@ -56,7 +56,7 @@ export default function Showcase() {
               </div>
               <div className={i % 2 === 1 ? "lg:order-1" : ""}>
                 <p className="font-mono text-sm text-brand-300">
-                  0{i + 1} — {c.label}
+                  0{i + 1} - {c.label}
                 </p>
                 <h3 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
                   {c.title}

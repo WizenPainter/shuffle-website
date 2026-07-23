@@ -73,14 +73,14 @@ export default function FuzzyDemo() {
         htmlFor="fuzzy-demo-input"
         className="mb-2 block text-xs font-medium uppercase tracking-wider text-white/40"
       >
-        Try it — type a few letters, skip some, make a typo
+        Try it - type a few letters, skip some, make a typo
       </label>
       <input
         id="fuzzy-demo-input"
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        placeholder="e.g. hxvault, shdmg, mainrs…"
+        placeholder="e.g. hxvault, shdmg, mainrs..."
         autoComplete="off"
         spellCheck={false}
         className="w-full rounded-xl border border-brand-400/25 bg-ink px-4 py-3 font-mono text-sm text-white outline-none placeholder:text-white/25 focus:border-cyan-glow/60"
@@ -88,7 +88,7 @@ export default function FuzzyDemo() {
       <ul className="mt-3 max-h-72 space-y-1 overflow-y-auto font-mono text-[0.8125rem] leading-6">
         {results.length === 0 && (
           <li className="px-3 py-2 text-white/35">
-            No match — every query character must appear in order.
+            No match - every query character must appear in order.
           </li>
         )}
         {results.map((r, i) => (

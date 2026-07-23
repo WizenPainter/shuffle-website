@@ -17,7 +17,7 @@ export default function Download() {
               </h2>
               <p className="mt-4 max-w-md text-lg text-white/60">
                 Download the disk image and drag Shuffle into Applications.
-                Built for {site.minMacOS} — universal for Apple Silicon and
+                Built for {site.minMacOS} - universal for Apple Silicon and
                 Intel.
               </p>
 

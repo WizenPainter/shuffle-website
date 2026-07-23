@@ -19,7 +19,7 @@ const ARCHETYPES: Archetype[] = [
     id: "orthodox",
     label: "Orthodox",
     model:
-      "Two fixed panes — source and destination — with every operation on a function key.",
+      "Two fixed panes - source and destination - with every operation on a function key.",
     strengths: "Fastest for bulk copy/move work; fully keyboard-driven.",
     weaknesses: "Austere; steep habits to learn; half the screen per listing.",
     exemplars: "Norton Commander, Total Commander, Midnight Commander",

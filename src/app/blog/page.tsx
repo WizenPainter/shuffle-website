@@ -7,12 +7,12 @@ import { posts } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Guides, comparisons, and deep dives on file managers — Finder alternatives, file-system history, and the engineering behind fast file browsing.",
+    "Guides, comparisons, and deep dives on file managers - Finder alternatives, file-system history, and the engineering behind fast file browsing.",
   alternates: { canonical: "/blog" },
   openGraph: {
     title: "The Shuffle blog",
     description:
-      "Guides, comparisons, and deep dives on file managers — Finder alternatives, file-system history, and the engineering behind fast file browsing.",
+      "Guides, comparisons, and deep dives on file managers - Finder alternatives, file-system history, and the engineering behind fast file browsing.",
     url: "/blog",
     type: "website",
   },
@@ -44,7 +44,7 @@ export default function BlogIndex() {
           </h1>
           <p className="mt-4 max-w-2xl text-white/60">
             Comparisons, history, file-system internals, and the engineering
-            behind fast file browsing — from the team building Shuffle.
+            behind fast file browsing - from the team building Shuffle.
           </p>
 
           {/* Featured latest post */}

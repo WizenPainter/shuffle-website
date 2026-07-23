@@ -1,15 +1,15 @@
 # Shuffle
 
-> Shuffle is a free, open source, GPU-rendered file manager for macOS — a fast, native alternative to Finder. Built in Rust with the GPUI framework and rendered with Metal, it stays instant even in folders with 100,000+ items, and adds power-user tools like dual panes, tabs, a millisecond command palette, terminal mode, live previews, and deep theming. Tuned for Apple Silicon; runs on macOS 12+.
+> Shuffle is a free, open source, GPU-rendered file manager for macOS - a fast, native alternative to Finder. Built in Rust with the GPUI framework and rendered with Metal, it stays instant even in folders with 100,000+ items, and adds power-user tools like dual panes, tabs, a millisecond command palette, terminal mode, live previews, and deep theming. Tuned for Apple Silicon; runs on macOS 12+.
 
 ## Key facts
 
 - **Name:** Shuffle
 - **Category:** File manager / file explorer for macOS (Finder alternative)
-- **Price:** Free and open source (MIT license). A one-time purchase for extra power-user features is planned — no subscriptions, ever.
+- **Price:** Free and open source (MIT license). A one-time purchase for extra power-user features is planned - no subscriptions, ever.
 - **Platform:** macOS 12 or later. Tuned for Apple Silicon (M-series); runs on modern Intel Macs (Intel builds from source).
 - **Built with:** Rust and GPUI (the GPU UI framework behind the Zed editor); GPU-rendered with Metal.
-- **Inspiration:** File Pilot on Windows — an open source, GPU-rendered file manager focused on performance and power-user features.
+- **Inspiration:** File Pilot on Windows - an open source, GPU-rendered file manager focused on performance and power-user features.
 - **Author:** Jaime Guzman
 - **Source code:** https://github.com/WizenPainter/shuffle
 - **Download (always latest release):** https://github.com/WizenPainter/shuffle/releases/latest/download/Shuffle.dmg
@@ -23,7 +23,7 @@ macOS file managers are either too limited or too slow. Shuffle is a single, sma
 - **Dual panes / split canvas:** Drag a tab to the edge to split the window into two side-by-side panes, each with its own tabs, history, and filter; a draggable divider resizes them.
 - **Tabs:** Open with Cmd+T, smoothly drag to reorder, and drag tabs between panes.
 - **Command palette (Cmd+P):** Millisecond fuzzy search over your home directory with typo tolerance, live path browsing, and quick commands.
-- **Terminal mode:** Optional command bar to move through the explorer like a shell — cd navigates, Tab autocompletes.
+- **Terminal mode:** Optional command bar to move through the explorer like a shell - cd navigates, Tab autocompletes.
 - **Preview & Information:** Single-click to QuickLook files (images, PDFs, docs) and inspect details in a side inspector.
 - **In-place filter (/):** Instantly narrow the current folder, typo tolerant.
 - **Cloud & servers:** Dropbox, Google Drive, OneDrive, and iCloud appear automatically, alongside mounted volumes and a Connect to Server dialog.
@@ -31,11 +31,11 @@ macOS file managers are either too limited or too slow. Shuffle is a single, sma
 
 ## Keyboard shortcuts
 
-- Cmd+P — Command palette / fuzzy find
-- / — Filter the current directory
-- Cmd+T — New tab
-- Cmd+W — Close tab
-- Cmd+, — Settings
+- Cmd+P - Command palette / fuzzy find
+- / - Filter the current directory
+- Cmd+T - New tab
+- Cmd+W - Close tab
+- Cmd+, - Settings
 
 ## Installation
 

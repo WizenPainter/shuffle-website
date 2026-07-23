@@ -19,7 +19,7 @@ const MILESTONES: Milestone[] = [
     oneLiner: "File work as small composable commands",
     era: "CLI",
     detail:
-      "The First Edition of Unix at Bell Labs shipped file management as a toolkit of tiny programs — ls, cp, mv, rm — glued together by the shell. Fifty-five years later they are still the fallback every power user reaches for.",
+      "The First Edition of Unix at Bell Labs shipped file management as a toolkit of tiny programs - ls, cp, mv, rm - glued together by the shell. Fifty-five years later they are still the fallback every power user reaches for.",
   },
   {
     year: "1974",
@@ -27,7 +27,7 @@ const MILESTONES: Milestone[] = [
     oneLiner: "DIR and PIP on the first mass-market micros",
     era: "CLI",
     detail:
-      "Gary Kildall's CP/M gave microcomputers a built-in DIR command and copied files with PIP, a utility inherited from DEC minicomputers — with the destination written before the source. MS-DOS later cloned this world almost verbatim.",
+      "Gary Kildall's CP/M gave microcomputers a built-in DIR command and copied files with PIP, a utility inherited from DEC minicomputers - with the destination written before the source. MS-DOS later cloned this world almost verbatim.",
   },
   {
     year: "1981",
@@ -51,7 +51,7 @@ const MILESTONES: Milestone[] = [
     oneLiner: "A visual directory tree for DOS",
     era: "TUI",
     detail:
-      "Released by Executive Systems in April 1985, XTree drew the entire disk as a navigable tree of text and let you tag many files for one batch operation — revolutionary next to typing COPY commands one at a time.",
+      "Released by Executive Systems in April 1985, XTree drew the entire disk as a navigable tree of text and let you tag many files for one batch operation - revolutionary next to typing COPY commands one at a time.",
   },
   {
     year: "1986",
@@ -75,7 +75,7 @@ const MILESTONES: Milestone[] = [
     oneLiner: "The navigational browser becomes the default",
     era: "GUI",
     detail:
-      "Explorer merged desktop, tree, and file list into a single browsing window with back-and-forward history — a model so successful that nearly every mainstream file manager since, including the modern Finder, works the same way.",
+      "Explorer merged desktop, tree, and file list into a single browsing window with back-and-forward history - a model so successful that nearly every mainstream file manager since, including the modern Finder, works the same way.",
   },
   {
     year: "2005",
@@ -91,7 +91,7 @@ const MILESTONES: Milestone[] = [
     oneLiner: "Apple concedes mobile needs a file manager",
     era: "Search",
     detail:
-      "The iPhone launched in 2007 with no user-visible file system at all — apps owned their data, and search plus recents replaced folders. A decade later, iOS 11 quietly added the Files app, an admission that hiding files entirely never fully worked.",
+      "The iPhone launched in 2007 with no user-visible file system at all - apps owned their data, and search plus recents replaced folders. A decade later, iOS 11 quietly added the Files app, an admission that hiding files entirely never fully worked.",
   },
   {
     year: "2025",
@@ -107,7 +107,7 @@ const MILESTONES: Milestone[] = [
     oneLiner: "The GPU renaissance reaches the Mac",
     era: "GPU",
     detail:
-      "Shuffle is a free, open-source file manager for macOS written in Rust on GPUI, the framework behind the Zed editor. Dual panes, tabs, and a millisecond fuzzy command palette — a deliberate remix of every era before it.",
+      "Shuffle is a free, open-source file manager for macOS written in Rust on GPUI, the framework behind the Zed editor. Dual panes, tabs, and a millisecond fuzzy command palette - a deliberate remix of every era before it.",
   },
 ];
 
@@ -133,7 +133,7 @@ export default function FileManagerTimeline() {
   return (
     <div className="demo not-prose">
       <p className="mb-1 text-xs font-medium uppercase tracking-wider text-white/40">
-        Six decades of file management — tap a milestone for the story
+        Six decades of file management - tap a milestone for the story
       </p>
       <div className="mb-4 flex flex-wrap gap-1.5">
         {(Object.keys(ERA_CHIP) as Era[]).map((era) => (

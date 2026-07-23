@@ -3,7 +3,7 @@ export type BlogPost = {
   title: string;
   /** Meta description + index-card summary (~150 chars, factual). */
   description: string;
-  /** ISO publish date — also used for sitemap lastModified and JSON-LD. */
+  /** ISO publish date - also used for sitemap lastModified and JSON-LD. */
   date: string;
   readingTime: string;
   tags: string[];
@@ -26,7 +26,7 @@ export const posts: BlogPost[] = [
     slug: "why-is-finder-slow",
     title: "Why is Finder so slow? And what you can actually do about it",
     description:
-      "The real reasons macOS Finder lags in big folders — .DS_Store, icon previews, cloud stubs, spring-loaded metadata — and every practical fix.",
+      "The real reasons macOS Finder lags in big folders - .DS_Store, icon previews, cloud stubs, spring-loaded metadata - and every practical fix.",
     date: "2026-07-07",
     readingTime: "9 min read",
     tags: ["macOS", "Performance"],
@@ -35,7 +35,7 @@ export const posts: BlogPost[] = [
     slug: "what-makes-a-file-manager-fast",
     title: "What makes a file manager fast?",
     description:
-      "Virtualized lists, GPU rendering, async I/O and the 8 ms frame budget — the engineering behind file browsers that stay instant at 100,000 files.",
+      "Virtualized lists, GPU rendering, async I/O and the 8 ms frame budget - the engineering behind file browsers that stay instant at 100,000 files.",
     date: "2026-06-29",
     readingTime: "10 min read",
     tags: ["Performance", "Engineering"],
@@ -45,7 +45,7 @@ export const posts: BlogPost[] = [
     slug: "history-of-the-file-manager",
     title: "From DIRMAINT to Finder: a brief history of the file manager",
     description:
-      "Six decades of file management — CP/M and DOS commands, Norton Commander, the Mac's spatial Finder, Windows Explorer, and today's GPU renaissance.",
+      "Six decades of file management - CP/M and DOS commands, Norton Commander, the Mac's spatial Finder, Windows Explorer, and today's GPU renaissance.",
     date: "2026-06-22",
     readingTime: "12 min read",
     tags: ["History"],
@@ -55,7 +55,7 @@ export const posts: BlogPost[] = [
     slug: "file-manager-archetypes",
     title: "The four archetypes of file managers",
     description:
-      "Orthodox dual-pane, navigational browser, spatial desktop, and Miller columns — where each design came from and which one fits how you work.",
+      "Orthodox dual-pane, navigational browser, spatial desktop, and Miller columns - where each design came from and which one fits how you work.",
     date: "2026-06-15",
     readingTime: "9 min read",
     tags: ["Design", "History"],
@@ -65,7 +65,7 @@ export const posts: BlogPost[] = [
     slug: "how-the-dos-fat-file-system-worked",
     title: "8.3 filenames and cluster chains: how the DOS FAT file system worked",
     description:
-      "A guided tour of FAT12 — boot sector, allocation table, directory entries, and why deleted files were recoverable — with an interactive disk map.",
+      "A guided tour of FAT12 - boot sector, allocation table, directory entries, and why deleted files were recoverable - with an interactive disk map.",
     date: "2026-06-08",
     readingTime: "11 min read",
     tags: ["History", "File systems"],
@@ -75,7 +75,7 @@ export const posts: BlogPost[] = [
     slug: "apfs-how-your-macs-file-system-works",
     title: "APFS explained: what your Mac's file system does under the hood",
     description:
-      "Copy-on-write, instant clones, snapshots, space sharing and encryption — how Apple File System actually works and why it replaced HFS+.",
+      "Copy-on-write, instant clones, snapshots, space sharing and encryption - how Apple File System actually works and why it replaced HFS+.",
     date: "2026-06-01",
     readingTime: "10 min read",
     tags: ["macOS", "File systems"],
@@ -84,7 +84,7 @@ export const posts: BlogPost[] = [
     slug: "how-fuzzy-search-works",
     title: "How fuzzy search works: typo-tolerant matching explained",
     description:
-      "Subsequence matching, edit distance, and scoring heuristics behind command palettes — with a live demo you can type into.",
+      "Subsequence matching, edit distance, and scoring heuristics behind command palettes - with a live demo you can type into.",
     date: "2026-05-25",
     readingTime: "8 min read",
     tags: ["Engineering", "Search"],
@@ -103,7 +103,7 @@ export const posts: BlogPost[] = [
     slug: "building-shuffle-rust-gpui",
     title: "Building a GPU-rendered file manager for macOS in Rust with GPUI",
     description:
-      "Why we built a Finder alternative in Rust on GPUI — Metal rendering, virtualized lists, fuzzy search, and the lessons from Zed's UI framework.",
+      "Why we built a Finder alternative in Rust on GPUI - Metal rendering, virtualized lists, fuzzy search, and the lessons from Zed's UI framework.",
     date: "2026-05-11",
     readingTime: "12 min read",
     tags: ["Engineering", "Shuffle"],

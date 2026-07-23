@@ -46,7 +46,7 @@ export default function DownloadButton({
         if (dmg) setHref(dmg.browser_download_url);
       })
       .catch(() => {
-        /* offline / rate-limited / no release yet — keep the stable link */
+        /* offline / rate-limited / no release yet - keep the stable link */
       });
     return () => controller.abort();
   }, []);

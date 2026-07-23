@@ -31,7 +31,7 @@ export default function Hero() {
             style={{ animationDelay: "0.12s" }}
           >
             Shuffle is a small, native macOS file manager that stays instant no
-            matter how big the directory — dual panes, tabs, a millisecond
+            matter how big the directory - dual panes, tabs, a millisecond
             command palette, and deep theming. No Electron, no jank.
           </p>
 

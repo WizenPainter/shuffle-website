@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const title = "Shuffle — A fast, native file manager for macOS";
+const title = "Shuffle - A fast, native file manager for macOS";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     siteName: "Shuffle",
     type: "website",
     locale: "en_US",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Shuffle — a fast, native file manager for macOS" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Shuffle - a fast, native file manager for macOS" }],
   },
   twitter: {
     card: "summary_large_image",

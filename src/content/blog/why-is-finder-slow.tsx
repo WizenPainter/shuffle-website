@@ -6,7 +6,7 @@ export default function WhyIsFinderSlow() {
       <p>
         Open a folder with ten thousand files in it and Finder hesitates. Click
         into a directory on a network share and the beachball spins. If you
-        have ever wondered whether it&apos;s your Mac, your disk, or you — it
+        have ever wondered whether it&apos;s your Mac, your disk, or you - it
         is almost certainly none of those. Finder&apos;s slowness has specific,
         diagnosable causes, and most of them have workarounds. This article
         walks through the real ones, in rough order of how often they bite.
@@ -23,7 +23,7 @@ export default function WhyIsFinderSlow() {
           contents (the QuickLook machinery),
         </li>
         <li>
-          read <strong>extended metadata</strong> — tags, comments, label
+          read <strong>extended metadata</strong> - tags, comments, label
           colors, where the file was downloaded from,
         </li>
         <li>
@@ -31,14 +31,14 @@ export default function WhyIsFinderSlow() {
           means asking Launch Services which app owns it,
         </li>
         <li>
-          in list view with &ldquo;Calculate all sizes&rdquo; enabled,
+          in list view with &quot;Calculate all sizes&quot; enabled,
           recursively <strong>stat entire subtrees</strong> to show folder
           sizes.
         </li>
       </ul>
       <p>
-        Each of these is cheap for one file. Multiplied by thousands of files —
-        and re-done as you scroll — they add up to the lag you feel. The fixes
+        Each of these is cheap for one file. Multiplied by thousands of files - 
+        and re-done as you scroll - they add up to the lag you feel. The fixes
         below mostly work by turning off work you did not ask for.
       </p>
 
@@ -48,12 +48,12 @@ export default function WhyIsFinderSlow() {
       <p>
         In icon view, Finder renders a live preview of every image, PDF, and
         video in the folder. In a folder of RAW photos this is brutal. Open{" "}
-        <strong>View → Show View Options</strong> (<code>⌘J</code>) and uncheck{" "}
-        <strong>Show icon preview</strong> for heavy folders — or browse them
+        <strong>View &gt; Show View Options</strong> (<code>⌘J</code>) and uncheck{" "}
+        <strong>Show icon preview</strong> for heavy folders - or browse them
         in list view, which requests far smaller previews.
       </p>
 
-      <h3>2. &ldquo;Calculate all sizes&rdquo; in list view</h3>
+      <h3>2. &quot;Calculate all sizes&quot; in list view</h3>
       <p>
         Innocent-looking checkbox, enormous cost: Finder walks every
         subdirectory of every folder in the listing to display its total size,
@@ -67,7 +67,7 @@ export default function WhyIsFinderSlow() {
         Finder stores each folder&apos;s view settings in a hidden{" "}
         <code>.DS_Store</code> file inside that folder. On an SMB share, every
         directory you open triggers reads and writes of these files over the
-        network — and on servers with many small round-trips, that is exactly
+        network - and on servers with many small round-trips, that is exactly
         the worst access pattern. You can stop Finder writing them to network
         volumes:
       </p>
@@ -91,7 +91,7 @@ export default function WhyIsFinderSlow() {
         access. Finder has to consult the sync extension for every item&apos;s
         state (downloaded? syncing? cloud-only?), and a misbehaving sync
         client can stall the whole folder view. If one particular synced
-        folder is always slow, the fix is usually in the sync app — pause it,
+        folder is always slow, the fix is usually in the sync app - pause it,
         update it, or mark the folder as always-local.
       </p>
 
@@ -133,13 +133,13 @@ export default function WhyIsFinderSlow() {
         previews, sync integration, and visual polish over raw listing speed,
         and its rendering was never designed around the question{" "}
         <em>
-          &ldquo;what if the user opens a directory with 100,000 entries and
-          starts scrolling immediately?&rdquo;
+          &quot;what if the user opens a directory with 100,000 entries and
+          starts scrolling immediately?&quot;
         </em>{" "}
         No checkbox changes that architecture.
       </p>
       <p>
-        That question is answerable, though — it is an engineering problem
+        That question is answerable, though - it is an engineering problem
         with known solutions: virtualized lists that only render visible rows,
         asynchronous metadata loading that never blocks the UI thread, and
         GPU-accelerated drawing. We wrote about those techniques in{" "}
@@ -147,8 +147,8 @@ export default function WhyIsFinderSlow() {
           What makes a file manager fast?
         </Link>
         , and they are exactly how{" "}
-        <Link href="/">Shuffle</Link> — a free, open source, GPU-rendered
-        Finder alternative — stays instant in directories that make Finder
+        <Link href="/">Shuffle</Link> - a free, open source, GPU-rendered
+        Finder alternative - stays instant in directories that make Finder
         wheeze. If you have tuned every setting above and big folders still
         feel heavy, the honest answer may be that you have outgrown Finder,
         not that your Mac is slow.
@@ -156,10 +156,10 @@ export default function WhyIsFinderSlow() {
 
       <div className="callout">
         <p>
-          <strong>TL;DR</strong> — turn off icon previews and
-          &ldquo;Calculate all sizes,&rdquo; stop <code>.DS_Store</code>{" "}
+          <strong>TL;DR</strong> - turn off icon previews and
+          &quot;Calculate all sizes,&quot; stop <code>.DS_Store</code>{" "}
           writes on network shares, check your cloud sync client and
-          Spotlight, relaunch Finder — and if that&apos;s still not enough,
+          Spotlight, relaunch Finder - and if that&apos;s still not enough,
           try a file manager built for speed, like{" "}
           <Link href="/">Shuffle</Link> (free, open source).
         </p>

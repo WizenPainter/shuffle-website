@@ -8,14 +8,14 @@ export default function BestFinderAlternativesMacos() {
         pushes you: a beachball in a 40,000-file directory, the fifth time you
         arranged two windows side by side to copy files, the realization that
         there is still no built-in way to see two folders at once in a single
-        window. Finder is a fine default — deeply integrated, familiar,
-        free — but it is built for casual use, and{" "}
+        window. Finder is a fine default - deeply integrated, familiar,
+        free - but it is built for casual use, and{" "}
         <Link href="/blog/why-is-finder-slow">
           its slowness in big folders is structural
         </Link>
         , not a settings problem. The good news is that the macOS
         file-manager scene in 2026 is the healthiest it has been in a decade.
-        Here are the seven alternatives worth your time, compared honestly —
+        Here are the seven alternatives worth your time, compared honestly - 
         including where each one falls short.
       </p>
 
@@ -47,7 +47,7 @@ export default function BestFinderAlternativesMacos() {
         </li>
         <li>
           <strong>Licensing and longevity.</strong> Subscription vs.
-          one-time vs. free, and — just as important — whether the project
+          one-time vs. free, and - just as important - whether the project
           looks alive. A file manager becomes muscle memory; abandonment
           hurts.
         </li>
@@ -152,7 +152,7 @@ export default function BestFinderAlternativesMacos() {
       </div>
       <p>
         Prices are the developers&apos; listed rates at the time of writing and
-        do change with sales and licensing-model shifts — check the linked
+        do change with sales and licensing-model shifts - check the linked
         vendors before buying.
       </p>
 
@@ -161,7 +161,7 @@ export default function BestFinderAlternativesMacos() {
         <Link href="/">Shuffle</Link> is the newest entrant on this list: a
         free, MIT-licensed file manager written in Rust on GPUI, the
         GPU-accelerated UI framework behind the Zed editor. The pitch is
-        simple — a file manager that renders like a game engine and navigates
+        simple - a file manager that renders like a game engine and navigates
         like an editor. Directory listings stay instant at sizes that make
         Finder stutter, the fuzzy command palette (<code>⌘P</code>) jumps
         anywhere in milliseconds, and <code>/</code> filters the current
@@ -181,14 +181,14 @@ export default function BestFinderAlternativesMacos() {
         protocol support, some edge cases are still being sanded down, and it
         is macOS-only (12+). Prebuilt binaries target Apple Silicon; Intel
         users currently need to build from source. If you want a batteries-included
-        veteran, look below — if you want the fastest thing on this list and
+        veteran, look below - if you want the fastest thing on this list and
         are happy filing an issue when you hit a gap, this is it.
       </p>
 
       <h2>Path Finder</h2>
       <p>
-        Cocoatech&apos;s Path Finder has been the &ldquo;Finder, but
-        more&rdquo; option since 2001, and no other app on this list comes
+        Cocoatech&apos;s Path Finder has been the &quot;Finder, but
+        more&quot; option since 2001, and no other app on this list comes
         close to its feature count: dual panes, a drop stack for staging
         files, folder comparison and sync, batch renaming, an integrated
         terminal, hex and text editors, ACL permission editing, and modules
@@ -197,7 +197,7 @@ export default function BestFinderAlternativesMacos() {
       </p>
       <p>
         The weaknesses follow from the strengths. All that surface area makes
-        it the heaviest app here — the UI can feel busy, and it has never
+        it the heaviest app here - the UI can feel busy, and it has never
         been the snappy option. The move to subscription pricing (about $30 a
         year, with longer standalone terms offered) remains unpopular with
         long-time users who bought perpetual licenses in the past. It is the
@@ -208,7 +208,7 @@ export default function BestFinderAlternativesMacos() {
       <h2>ForkLift 4</h2>
       <p>
         BinaryNights&apos; ForkLift is the most polished native-Mac experience
-        in this roundup — the app you show someone who thinks third-party
+        in this roundup - the app you show someone who thinks third-party
         file managers must look clunky. Its core strength is transfers: SFTP,
         FTP, WebDAV, S3-compatible storage, and cloud services all mount into
         the same dual-pane UI as local disks, with reliable folder syncing,
@@ -219,8 +219,8 @@ export default function BestFinderAlternativesMacos() {
       </p>
       <p>
         Weaknesses: it is proprietary, the keyboard story is thinner than the
-        orthodox managers&apos; — ForkLift is happiest with a mouse in
-        hand — and if you never touch remote servers you are paying for its
+        orthodox managers&apos; - ForkLift is happiest with a mouse in
+        hand - and if you never touch remote servers you are paying for its
         best feature without using it. For anyone who lives half their day in
         SFTP sessions, though, it is arguably the safest purchase on this
         page.
@@ -242,8 +242,8 @@ export default function BestFinderAlternativesMacos() {
         and the developer has said it will become a paid product at 1.0. A
         closed-source app with a single maintainer and an uncertain release
         cadence is a real dependency to take on for something as central as
-        your file manager. As a philosophy, though — minimal, fast,
-        keyboard-first, text-configured — it clearly works, and it shaped
+        your file manager. As a philosophy, though - minimal, fast,
+        keyboard-first, text-configured - it clearly works, and it shaped
         our thinking when designing Shuffle.
       </p>
 
@@ -265,7 +265,7 @@ export default function BestFinderAlternativesMacos() {
         Commander-style manager, the F-key-driven interface has a learning
         curve, and the UI, while native, will not win design awards. For
         ex-Windows power users who miss Total Commander, nothing else on
-        macOS comes closer — and the price is unbeatable.
+        macOS comes closer - and the price is unbeatable.
       </p>
 
       <h2>QSpace Pro</h2>
@@ -275,7 +275,7 @@ export default function BestFinderAlternativesMacos() {
         the window into flexible layouts of up to four panes, each with its
         own tabs. It connects to SFTP, FTP, WebDAV, S3, and several cloud
         services, supports dragging between any panes, and is sold as an
-        inexpensive one-time purchase — about $13 on the Mac App Store, with
+        inexpensive one-time purchase - about $13 on the Mac App Store, with
         Pro features unlocked via a small in-app purchase (a lifetime license
         direct from the developer costs more).
       </p>
@@ -292,7 +292,7 @@ export default function BestFinderAlternativesMacos() {
       <p>
         Eltima&apos;s Commander One is a classic two-panel manager with a
         freemium split: the free tier covers dual-pane browsing, tabs, and
-        search, while the PRO pack (about $30) adds the interesting parts —
+        search, while the PRO pack (about $30) adds the interesting parts - 
         FTP/SFTP/WebDAV, archive handling, a terminal, and its headline
         trick, mounting Dropbox, Google Drive, OneDrive, S3, and even iOS or
         Android devices as if they were local disks.
@@ -310,10 +310,10 @@ export default function BestFinderAlternativesMacos() {
         A fair comparison has to include the default. Finder&apos;s
         integration is something no third party can fully match: it is the
         system-wide open/save dialog&apos;s sibling, the desktop, the target
-        of every &ldquo;Reveal in Finder&rdquo; button, and the only file
+        of every &quot;Reveal in Finder&quot; button, and the only file
         manager Apple&apos;s own features (iCloud state badges, Continuity,
         Quick Actions) are guaranteed to serve first. If your file work is
-        occasional — downloads, documents, the odd USB stick — switching
+        occasional - downloads, documents, the odd USB stick - switching
         buys you little, and tuning Finder&apos;s settings solves most
         day-to-day sluggishness.
       </p>
@@ -331,7 +331,7 @@ export default function BestFinderAlternativesMacos() {
       <ul>
         <li>
           <strong>You want maximum speed, free, and open source:</strong>{" "}
-          <Link href="/">Shuffle</Link> — accepting that it is young — or
+          <Link href="/">Shuffle</Link> - accepting that it is young - or
           Nimble Commander if you prefer a battle-tested classic.
         </li>
         <li>
@@ -358,18 +358,18 @@ export default function BestFinderAlternativesMacos() {
       </ul>
       <p>
         Almost all of these have free versions or trials, and none locks your
-        files in — the switching cost is an afternoon of muscle memory. Try
+        files in - the switching cost is an afternoon of muscle memory. Try
         two side by side on a real task (a big photo cull, a server deploy)
         and the right answer usually becomes obvious within an hour.
       </p>
       <p>
         One practical note on switching: you do not have to replace Finder
         wholesale, and none of these apps asks you to. macOS has no supported
-        way to change the default file manager, so &ldquo;Reveal in
-        Finder&rdquo; buttons and desktop icons keep going to Finder
-        regardless. In practice that matters less than it sounds — every app
+        way to change the default file manager, so &quot;Reveal in
+        Finder&quot; buttons and desktop icons keep going to Finder
+        regardless. In practice that matters less than it sounds - every app
         here can be bound to a global hotkey or launched at login, and most
-        offer a &ldquo;open current Finder window here&rdquo; command that
+        offer a &quot;open current Finder window here&quot; command that
         makes the handoff painless. Treat the alternative as your working
         tool and Finder as the system plumbing it is, and the two coexist
         without friction.
@@ -377,11 +377,11 @@ export default function BestFinderAlternativesMacos() {
 
       <div className="callout">
         <p>
-          <strong>TL;DR</strong> — ForkLift 4 is the polished all-rounder for
+          <strong>TL;DR</strong> - ForkLift 4 is the polished all-rounder for
           transfer-heavy work, Nimble Commander the free orthodox classic,
           QSpace Pro the cheap Finder-plus, Path Finder the subscription
           kitchen sink, Marta the minimalist beta, Commander One the cloud
-          mounter — and <Link href="/">Shuffle</Link> is the free, MIT-licensed,
+          mounter - and <Link href="/">Shuffle</Link> is the free, MIT-licensed,
           GPU-rendered newcomer to pick if speed and keyboard-first navigation
           matter most and you don&apos;t mind an app that is still growing.
         </p>

@@ -134,7 +134,7 @@ export default async function BlogPostPage({
             </p>
             <p className="mx-auto mt-2 max-w-md text-sm text-white/55">
               Shuffle is a free, open source, GPU-rendered Finder alternative
-              for macOS — dual panes, tabs, and a millisecond command palette.
+              for macOS - dual panes, tabs, and a millisecond command palette.
             </p>
             <div className="mt-5 flex justify-center">
               <DownloadButton />

@@ -25,7 +25,7 @@ const STEMS = [
 ];
 const EXTS = ["pdf", "png", "txt", "csv", "mov", "zip", "md", "json", "heic", "wav"];
 
-/** Deterministic integer hash — same fake listing on server and client. */
+/** Deterministic integer hash - same fake listing on server and client. */
 function hash(i: number): number {
   let x = (i + 0x9e3779b9) >>> 0;
   x = Math.imul(x ^ (x >>> 16), 0x45d9f3b) >>> 0;
@@ -151,7 +151,7 @@ export default function VirtualizationDemo() {
   return (
     <div className="demo not-prose">
       <p className="mb-3 text-xs font-medium uppercase tracking-wider text-white/40">
-        Scroll both lists — same 50,000 files
+        Scroll both lists - same 50,000 files
       </p>
       <div className="flex flex-col gap-5 sm:flex-row">
         <Pane mode="naive" />
@@ -159,7 +159,7 @@ export default function VirtualizationDemo() {
       </div>
       <p className="mt-4 text-xs leading-5 text-white/40">
         A simulation, honestly labeled: the left pane does not really build
-        50,000 DOM nodes (that would jank this whole page) — it renders a
+        50,000 DOM nodes (that would jank this whole page) - it renders a
         window but throttles repaints to ~12 fps, the frame rate a main
         thread saturated by that much layout work typically manages. The
         right pane is real windowing: it slices the visible range plus a few

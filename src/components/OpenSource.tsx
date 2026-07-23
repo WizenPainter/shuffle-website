@@ -21,7 +21,7 @@ export default function OpenSource() {
               Free core. Pay only if you want more.
             </h2>
             <p className="mt-4 text-lg text-white/60">
-              Shuffle is fully open source under the MIT license — the complete
+              Shuffle is fully open source under the MIT license - the complete
               app is free to use, inspect, and build yourself. A one-time
               purchase for extra power-user features is planned, with no
               subscriptions, ever.
@@ -93,7 +93,7 @@ export default function OpenSource() {
               >
                 GPUI
               </a>{" "}
-              — the GPU UI framework behind the Zed editor. Clone it, build it,
+              - the GPU UI framework behind the Zed editor. Clone it, build it,
               ship your own.
             </p>
 
