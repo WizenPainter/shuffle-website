@@ -2,8 +2,11 @@ export const site = {
   name: "Shuffle",
   tagline: "A modern file explorer for macOS, built for speed.",
   // Canonical production URL - used for metadata, sitemap, robots, JSON-LD and
-  // llms.txt. Change this in ONE place if the domain ever changes.
-  url: "https://shuffleapp.co",
+  // llms.txt. Uses www because Vercel serves the site there (the bare domain
+  // 308-redirects to www, and link-preview crawlers like WhatsApp's won't
+  // follow image redirects). If the primary domain in Vercel ever flips to
+  // the bare domain, change this ONE value to match.
+  url: "https://www.shuffleapp.co",
   // One-sentence factual summary, reused across metadata and structured data
   // so search engines and AI assistants get a single consistent description.
   description:

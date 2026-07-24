@@ -70,7 +70,7 @@ export default async function BlogPostPage({
     inLanguage: "en",
     keywords: post.tags.join(", "),
     url: `${site.url}/blog/${post.slug}`,
-    image: `${site.url}/og.png`,
+    image: `${site.url}/og.jpg`,
     author: { "@type": "Person", name: site.author },
     publisher: {
       "@type": "Organization",
