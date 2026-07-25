@@ -3,7 +3,12 @@
 import { useEffect, useState } from "react";
 import { site } from "@/lib/site";
 
-type RoadmapItem = { title: string; note?: string; done: boolean };
+type RoadmapItem = {
+  title: string;
+  note?: string;
+  done: boolean;
+  voteUrl?: string;
+};
 type RoadmapSection = { heading: string; items: RoadmapItem[] };
 
 const ROADMAP_RAW_URL = `https://raw.githubusercontent.com/${site.githubRepo}/master/ROADMAP.md`;
@@ -65,11 +70,20 @@ function parseRoadmap(md: string): RoadmapSection[] {
     const item = line.match(/^-\s*(?:\[( |x|X)\]\s*)?(.+)$/);
     if (item && current && item[2]) {
       const done = (item[1] || "").toLowerCase() === "x";
-      const [title, ...noteParts] = item[2].split(" - ");
+      // A trailing "- vote: <url>" becomes an upvote link, not note text.
+      let rest = item[2];
+      let voteUrl: string | undefined;
+      const vote = rest.match(/\s*[-–]?\s*vote:\s*(\S+)\s*$/i);
+      if (vote) {
+        voteUrl = vote[1].startsWith("http") ? vote[1] : `https://${vote[1]}`;
+        rest = rest.slice(0, vote.index).trim();
+      }
+      const [title, ...noteParts] = rest.split(" - ");
       current.items.push({
         title: title.trim(),
         note: noteParts.length ? noteParts.join(" - ").trim() : undefined,
         done,
+        voteUrl,
       });
     }
   }
@@ -164,6 +178,16 @@ export default function Roadmap() {
                           <span className="block text-xs text-white/40">
                             {item.note}
                           </span>
+                        )}
+                        {item.voteUrl && (
+                          <a
+                            href={item.voteUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="mt-1 inline-flex items-center gap-1 rounded-full border border-brand-400/25 bg-brand-500/10 px-2 py-0.5 text-[11px] font-medium text-brand-200 transition-colors hover:border-brand-400/50 hover:text-white"
+                          >
+                            &uarr; Vote
+                          </a>
                         )}
                       </span>
                     </li>
