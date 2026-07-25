@@ -45,7 +45,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Is Shuffle free?",
-    a: "Yes. The full Shuffle app is completely free and open source under the MIT license. A one-time purchase for extra power-user features is planned for the future, but there are no subscriptions - ever.",
+    a: "Yes. The full Shuffle app is completely free and open source under the MIT license. A one-time purchase for extra power-user features may be added someday, but there will never be subscriptions.",
   },
   {
     q: "Is Shuffle a good Finder alternative?",

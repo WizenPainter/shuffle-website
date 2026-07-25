@@ -4,6 +4,7 @@ import Features from "@/components/Features";
 import Showcase from "@/components/Showcase";
 import Download from "@/components/Download";
 import OpenSource from "@/components/OpenSource";
+import Roadmap from "@/components/Roadmap";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 
@@ -17,6 +18,7 @@ export default function Home() {
         <Showcase />
         <Download />
         <OpenSource />
+        <Roadmap />
         <Faq />
       </main>
       <Footer />

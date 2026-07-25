@@ -6,7 +6,7 @@
 
 - **Name:** Shuffle
 - **Category:** File manager / file explorer for macOS (Finder alternative)
-- **Price:** Free and open source (MIT license). A one-time purchase for extra power-user features is planned - no subscriptions, ever.
+- **Price:** Free and open source (MIT license). A one-time purchase for extra power-user features may be added someday - if so, one payment only, no subscriptions.
 - **Platform:** macOS 12 or later. Tuned for Apple Silicon (M-series); runs on modern Intel Macs (Intel builds from source).
 - **Built with:** Rust and GPUI (the GPU UI framework behind the Zed editor); GPU-rendered with Metal.
 - **Inspiration:** File Pilot on Windows - an open source, GPU-rendered file manager focused on performance and power-user features.

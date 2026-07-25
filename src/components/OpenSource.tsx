@@ -23,8 +23,8 @@ export default function OpenSource() {
             <p className="mt-4 text-lg text-white/60">
               Shuffle is fully open source under the MIT license - the complete
               app is free to use, inspect, and build yourself. A one-time
-              purchase for extra power-user features is planned, with no
-              subscriptions, ever.
+              purchase for extra power-user features may come someday - but if
+              it does, no subscriptions, ever.
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -50,7 +50,7 @@ export default function OpenSource() {
 
               <div className="relative rounded-2xl border border-brand-400/30 bg-brand-500/5 p-6">
                 <span className="absolute right-4 top-4 rounded-full border border-brand-400/40 bg-brand-500/10 px-2.5 py-0.5 text-xs font-medium text-brand-200">
-                  Planned
+                  Planned?
                 </span>
                 <div className="flex items-baseline gap-1">
                   <span className="text-3xl font-bold text-white">Pro</span>
@@ -63,7 +63,7 @@ export default function OpenSource() {
                     "Everything in Free",
                     "Extra power-user features",
                     "Support development",
-                    "Coming soon",
+                    "If it happens, one payment only",
                   ].map((t) => (
                     <li key={t} className="flex items-center gap-2">
                       <span className="text-brand-300">✦</span>
