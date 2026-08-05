@@ -80,6 +80,15 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+  verification: {
+    // Emitted only when a code is present (see site.verification for setup).
+    ...(site.verification.google
+      ? { google: site.verification.google }
+      : {}),
+    ...(site.verification.bing
+      ? { other: { "msvalidate.01": site.verification.bing } }
+      : {}),
+  },
 };
 
 export default function RootLayout({

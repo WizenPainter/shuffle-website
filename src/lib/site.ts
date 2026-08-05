@@ -33,6 +33,19 @@ export const site = {
   language: "Rust",
   framework: "GPUI",
   author: "Jaime Guzman",
+  // Search-engine ownership verification. Paste the codes here after creating
+  // the properties, then redeploy - they render as <meta> tags in <head>.
+  //   Google Search Console: https://search.google.com/search-console
+  //     -> Add property (URL prefix) https://www.shuffleapp.co
+  //     -> "HTML tag" method -> copy the content="..." value into `google`.
+  //   Bing Webmaster Tools: https://www.bing.com/webmasters
+  //     -> Add site -> "Meta tag" -> copy the content="..." value into `bing`.
+  // Leave a value empty ("") to omit that tag. Once verified, submit
+  // https://www.shuffleapp.co/sitemap.xml in each tool.
+  verification: {
+    google: "",
+    bing: "",
+  },
 };
 
 export type Faq = { q: string; a: string };

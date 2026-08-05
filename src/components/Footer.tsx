@@ -24,6 +24,9 @@ export default function Footer() {
           <a href="/#download" className="transition-colors hover:text-white">
             Download
           </a>
+          <a href="/vs" className="transition-colors hover:text-white">
+            Compare
+          </a>
           <a href="/blog" className="transition-colors hover:text-white">
             Blog
           </a>

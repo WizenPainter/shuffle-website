@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import DownloadButton from "@/components/DownloadButton";
+import AnswerBlock from "@/components/AnswerBlock";
 import { getPost, posts } from "@/lib/blog";
 import { postComponents } from "@/content/blog";
 import { site } from "@/lib/site";
@@ -62,30 +63,57 @@ export default async function BlogPostPage({
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "@id": `${site.url}/blog/${post.slug}`,
-    headline: post.title,
-    description: post.description,
-    datePublished: post.date,
-    inLanguage: "en",
-    keywords: post.tags.join(", "),
-    url: `${site.url}/blog/${post.slug}`,
-    image: `${site.url}/og.jpg`,
-    author: { "@type": "Person", name: site.author },
-    publisher: {
-      "@type": "Organization",
-      name: "Shuffle",
-      url: site.url,
-      logo: { "@type": "ImageObject", url: `${site.url}/logo.png` },
-    },
-    isPartOf: { "@type": "Blog", name: "The Shuffle blog", url: `${site.url}/blog` },
-    about: {
-      "@type": "SoftwareApplication",
-      name: "Shuffle",
-      operatingSystem: "macOS 12+",
-      applicationCategory: "DeveloperApplication",
-      url: site.url,
-    },
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": `${site.url}/blog/${post.slug}`,
+        headline: post.title,
+        description: post.description,
+        datePublished: post.date,
+        dateModified: post.date,
+        inLanguage: "en",
+        keywords: post.tags.join(", "),
+        url: `${site.url}/blog/${post.slug}`,
+        image: `${site.url}/og.jpg`,
+        author: { "@type": "Person", name: site.author },
+        publisher: {
+          "@type": "Organization",
+          name: "Shuffle",
+          url: site.url,
+          logo: { "@type": "ImageObject", url: `${site.url}/logo.png` },
+        },
+        isPartOf: {
+          "@type": "Blog",
+          name: "The Shuffle blog",
+          url: `${site.url}/blog`,
+        },
+        about: {
+          "@type": "SoftwareApplication",
+          name: "Shuffle",
+          operatingSystem: "macOS 12+",
+          applicationCategory: "DeveloperApplication",
+          url: site.url,
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Blog",
+            item: `${site.url}/blog`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: post.title,
+            item: `${site.url}/blog/${post.slug}`,
+          },
+        ],
+      },
+    ],
   };
 
   return (
@@ -122,6 +150,10 @@ export default async function BlogPostPage({
               {post.readingTime} · by {site.author}
             </p>
           </header>
+
+          <div className="mt-8">
+            <AnswerBlock label="TL;DR">{post.description}</AnswerBlock>
+          </div>
 
           <div className="article mt-10">
             <Body />

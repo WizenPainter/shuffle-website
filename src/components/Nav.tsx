@@ -12,6 +12,7 @@ const links = [
   { href: "/#open-source", label: "Open source" },
   { href: "/#roadmap", label: "Roadmap" },
   { href: "/#faq", label: "FAQ" },
+  { href: "/vs", label: "Compare" },
   { href: "/blog", label: "Blog" },
 ];
 
